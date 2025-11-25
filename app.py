@@ -5,7 +5,7 @@ import os
 import urllib.request
 
 MODEL_PATH = "models/best_model.pkl"
-MODEL_URL = "https://drive.google.com/uc?export=download&id=1c69ZxqEVyY60JSwcgxvakconjp8B_u8M"
+MODEL_URL = "https://raw.githubusercontent.com/02fissy/housing-ml1/main/models/best_model.pkl"
 
 # Create folder if not exists
 os.makedirs("models", exist_ok=True)
