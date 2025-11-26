@@ -6,7 +6,7 @@ import pandas as pd
 st.set_page_config(page_title='House Price Predictor', layout='centered')
 st.title("Machine Learning Group 1 (Group A)")
 st.title('House Price Predictor (California)')
-st.write('Input the features and click Predict. The model predicts the median house value (as used in the California Housing dataset).')
+st.write('Input the features and click Predict. The model predicts house price(as used in the California Housing dataset).')
 
 # Feature inputs - default values chosen sensibly but user can change
 MedInc = st.number_input('Median Income in block (MedInc)', value=3.0, min_value=0.0, step=0.1)
@@ -38,6 +38,6 @@ if st.button('Predict'):
 
     pred = model.predict(input_df)[0]
     price = pred * 100000
-    st.success(f'Predicted house price: {price:,.3f} (units same as sklearn target)')
+    st.success(f'Predicted house price: ${price:,.3f} (units same as sklearn target)')
    
 
