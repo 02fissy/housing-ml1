@@ -37,6 +37,7 @@ if st.button('Predict'):
         st.stop()
 
     pred = model.predict(input_df)[0]
-    st.success(f'Predicted house price: {pred:,.3f} (units same as sklearn target)')
+    price = pred * 100000
+    st.success(f'Predicted house price: {price:,.3f} (units same as sklearn target)')
    
 
