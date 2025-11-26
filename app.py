@@ -4,6 +4,7 @@ import joblib
 import pandas as pd
 
 st.set_page_config(page_title='House Price Predictor', layout='centered')
+st.title("Machine Learning Group 1 (Group A)")
 st.title('House Price Predictor (California)')
 st.write('Input the features and click Predict. The model predicts the median house value (as used in the California Housing dataset).')
 
@@ -30,13 +31,12 @@ input_df = pd.DataFrame([{
 
 if st.button('Predict'):
     try:
-        model = joblib.load('models/best_model.pkl')
+        model = joblib.load('best_model.pkl')
     except Exception as e:
         st.error('Could not load model. Make sure you ran `python src/train.py` first to create models/best_model.pkl')
         st.stop()
 
     pred = model.predict(input_df)[0]
-    st.success(f'Predicted median house value: {pred:,.3f} (units same as sklearn target)')
-    st.info('Note: The target in sklearn California dataset is scaled; interpret accordingly or rescale if needed for real dollars.')
-
+    st.success(f'Predicted house price: {pred:,.3f} (units same as sklearn target)')
+   
 
