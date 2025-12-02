@@ -31,7 +31,7 @@ input_df = pd.DataFrame([{
 
 if st.button('Predict'):
     try:
-        model = joblib.load('best_model.pkl')
+        model = joblib.load('models/best_model.pkl')
     except Exception as e:
         st.error('Could not load model. Make sure you ran `python src/train.py` first to create models/best_model.pkl')
         st.stop()
